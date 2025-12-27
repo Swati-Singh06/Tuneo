@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUNEO</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="player-container">
+        <!-- Song Info & Art -->
+        <div class="img-container">
+            <img src="images/default.png" alt="Album Art" id="cover" class="active">
+        </div>
+        <h2 id="title">Song Title</h2>
+        <h3 id="artist">Artist Name</h3>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <span id="curr-time">0:00</span>
+            <input type="range" id="progress" value="0" min="0" max="100">
+            <span id="dur-time">0:00</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="shuffle" class="action-btn" title="Shuffle">
+                <i class="fas fa-random"></i>
+            </button>
+            <button id="prev" class="action-btn" title="Previous">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn big" title="Play">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn" title="Next">
+                <i class="fas fa-forward"></i>
+            </button>
+            <button id="repeat" class="action-btn" title="Repeat">
+                <i class="fas fa-redo"></i>
+            </button>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-container">
+            <i class="fas fa-volume-down"></i>
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+            <i class="fas fa-volume-up"></i>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist">
+            <h3>Playlist</h3>
+            <ul id="playlist-items">
+                <!-- Items will be added by JS -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audio"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
